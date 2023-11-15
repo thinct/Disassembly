@@ -1,0 +1,1 @@
+dot -Tpng Memory.gv -o Memory.png

@@ -1,0 +1,26 @@
+digraph Memory {
+    node [shape=box];
+    rankdir = LR;
+
+    addr_0x00728A18 -> data_0x00000888
+    addr_0x0019FF0C -> addr_0x00728A90 -> data_0x00000888
+    addr_0x0019FEE0 -> addr_0x00728A70 -> data_0x00000888
+
+    addr_0x00728A1C -> addr_0x00726E88 -> data_0x00000123
+    addr_0x00728A74 -> addr_0x00726E88 -> data_0x00000123
+    addr_0x00728A94 -> addr_0x00726E88 -> data_0x00000123
+
+    addr_0x0019FF14 -> addr_0x00728A78 -> addr_0xABABABAB
+    addr_0x0019FF14 -> addr_0x00728AA0
+
+    addr_0x0019FF10 -> addr_0x00728A78
+    addr_0x0019FF10 -> addr_0x00728AA0
+    addr_0x0019FF10 -> addr_0x00000000
+
+    
+    addr_0x00404004 -> addr_0xCDE5E06C
+    addr_0x0019FF18 -> addr_0xCDFC1F44
+    addr_0x0019FF1C -> addr_0x0019FF60
+    addr_0x0019FF04 -> addr_0x00000456
+    addr_0x0019FF08 -> addr_0x00725520 -> data_0x00000987
+}
