@@ -88,14 +88,15 @@
 /*0x0040140D*/    mov dword ptr ds:[edx+0x4], eax
 ;[edx+0x4]=[0x00728A74]=0xBAADF00D
 ;[edx+0x4]=[0x00728A74]=0x00726E88  <-- Modify
+/*0x00401416*/    mov ecx, dword ptr ds:[edi]
+;[edi]=[0x0019FF0C]=0x00000000
 /*0x00401410*/    mov eax, dword ptr ds:[edi+0x4]
 ;[edi+0x4]=[0x0019FF10]=0x00000000
 /*0x00401413*/    mov edx, dword ptr ss:[ebp-0x8]
 ;[ebp-0x8]=[0x0019FEDC]=0x00000000
-/*0x00401416*/    mov ecx, dword ptr ds:[edi]
-;[edi]=[0x0019FF0C]=0x00000000
 /*0x00401418*/    cmp edx, eax
 ;/*0x0040141A*/    jne 0x0040142B
+
 /*0x0040141C*/    sub eax, ecx
 /*0x0040141E*/    push eax
 /*0x0040141F*/    push ecx
@@ -103,15 +104,17 @@
 /*0x00401421*/    call 0x004021F2
 /*0x00401426*/    add esp, 0xC
 ;/*0x00401429*/    jmp 0x0040144E
+
 /*0x0040144E*/    mov eax, dword ptr ds:[edi]
 ;[edi]=[0x0019FF0C]=0x00000000
 /*0x00401450*/    test eax, eax
 ;/*0x00401452*/    je 0x00401480
-/*0x00401480*/    mov eax, dword ptr ss:[ebp-0xC]
-;[ebp-0xC]=[0x0019FED8]=0x00000001
+
 /*0x00401483*/    mov dword ptr ds:[edi], esi
 ;[edi]=[0x0019FF0C]=0x00000000
 ;[edi]=[0x0019FF0C]=0x00728A70  <-- Modify
+/*0x00401480*/    mov eax, dword ptr ss:[ebp-0xC]
+;[ebp-0xC]=[0x0019FED8]=0x00000001
 /*0x00401485*/    lea ecx, ds:[esi+eax*8]
 ;[esi+eax*8]=[0x00728A78]=0xABABABAB
 /*0x00401488*/    mov eax, dword ptr ss:[ebp-0x4]
@@ -121,11 +124,11 @@
 ;[edi+0x4]=[0x0019FF10]=0x00728A78  <-- Modify
 /*0x0040148E*/    lea ecx, ds:[ebx+esi*1]
 ;[ebx+esi*1]=[0x00728A78]=0xABABABAB
-/*0x00401491*/    pop esi
-/*0x00401492*/    pop ebx
 /*0x00401493*/    mov dword ptr ds:[edi+0x8], ecx
 ;[edi+0x8]=[0x0019FF14]=0x00000000
 ;[edi+0x8]=[0x0019FF14]=0x00728A78  <-- Modify
+/*0x00401491*/    pop esi
+/*0x00401492*/    pop ebx
 /*0x00401496*/    pop edi
 /*0x00401497*/    mov esp, ebp
 /*0x00401499*/    pop ebp
@@ -138,6 +141,7 @@
 /*0x00401241*/    cmp esi, dword ptr ss:[ebp-0x14]
 ;[ebp-0x14]=[0x0019FF14]=0x00728A78
 ;/*0x00401244*/    je 0x00401254
+
 /*0x00401254*/    lea eax, ss:[ebp-0x24]
 ;[ebp-0x24]=[0x0019FF04]=0x00000456
 /*0x00401257*/    push eax
